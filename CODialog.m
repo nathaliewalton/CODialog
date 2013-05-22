@@ -437,6 +437,9 @@ CODialogSynth(highlightedIndex)
       self.transform = CGAffineTransformIdentity;
     } completion:^(BOOL finished) {
       // stub
+        if (self.dialogDidShowCallback) {
+            self.dialogDidShowCallback();
+        }
     }];
     
     [overlay addSubview:self];
